@@ -19,6 +19,14 @@ class ProduitRepository extends ServiceEntityRepository
         parent::__construct($registry, Produit::class);
     }
 
+    public function countByRef($ref) {
+        $qb = $this->createQueryBuilder('p');
+        $qb->where('p.reference LIKE :p1');
+        $qb->setParameter('p1', $ref . '%');
+        $qb->select('COUNT(p.id)');
+        return $qb->getQuery()->getSingleScalarResult();
+    }
+
     // /**
     //  * @return Produit[] Returns an array of Produit objects
     //  */

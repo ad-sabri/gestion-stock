@@ -3,6 +3,10 @@
 {% block title %}Hello ProduitController!{% endblock %}
 
 {% block body %}
+
+    {{ dump(produits) }}
+
+    <a href="{{ path('produit_add') }}" class="btn btn-primary mb-2">Nouveau</a>
     <table class="table">
         <thead>
         <tr>

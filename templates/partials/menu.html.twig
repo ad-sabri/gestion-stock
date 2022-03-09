@@ -28,5 +28,10 @@
                 <i class="fa fa-users me-2"></i>Clients
             </a>
         </li>
+        <li class="{{ routeName == 'produit' ? 'active' : '' }}">
+            <a href="{{ path('app_produit') }}">
+                <i class="fas fa-wine-bottle"></i> Produits
+            </a>
+        </li>
     </ul>
 </nav>
